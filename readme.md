@@ -5,21 +5,12 @@
 ## Install
 
 ```bash
-$ npm install --global LOL-cli
+$ npm install --global lol-champion-cli
 ```
 
 ## CLI
 
 ```
-$ LOL-cli --help
-
-  Usage
-    $ LOL-cli
-
-  Options
-    --name  Your name
-
-  Examples
-    $ LOL-cli --name=Jane
-    Hello, Jane
+Run lolstats to launch
+$ lolstats
 ```
