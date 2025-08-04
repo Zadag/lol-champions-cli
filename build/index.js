@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { render, Text, Box, useInput, useApp, useStdin } from "ink";
 import axios from "axios";
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "http://35.208.176.209:3000";
 
 // Enhanced styling components
 const BorderBox = ({
@@ -127,12 +127,12 @@ const App = () => {
     alignItems: "center"
   }, /*#__PURE__*/React.createElement(GradientText, {
     colors: ["magenta", "cyan"]
-  }, "\uD83C\uDFC6 LEAGUE OF LEGENDS CHAMPION ANALYZER \uD83C\uDFC6")), /*#__PURE__*/React.createElement(Box, {
+  }, "\uD83C\uDFC6 LEAGUE OF LEGENDS STATS \uD83C\uDFC6")), /*#__PURE__*/React.createElement(Box, {
     justifyContent: "center"
   }, /*#__PURE__*/React.createElement(Text, {
     color: "gray",
     italic: true
-  }, "Your ultimate champion statistics companion"))), loading && /*#__PURE__*/React.createElement(LoadingView, null), error && /*#__PURE__*/React.createElement(ErrorView, {
+  }, "A minimalist way to check matchups/counters"))), loading && /*#__PURE__*/React.createElement(LoadingView, null), error && /*#__PURE__*/React.createElement(ErrorView, {
     error: error,
     onRetry: fetchChampionData,
     isRawModeSupported: isRawModeSupported

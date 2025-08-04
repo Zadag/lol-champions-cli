@@ -5,7 +5,7 @@
 	"main": "build/index.js",
 	"type": "module",
 	"bin": {
-		"lol-champions": "./build/index.js"
+		"lolstats": "./build/index.js"
 	},
 	"scripts": {
 		"start": "node build/index.js",

@@ -4,9 +4,8 @@ import React, { useState, useEffect, useMemo } from "react";
 import { render, Text, Box, useInput, useApp, useStdin } from "ink";
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "http://35.208.176.209:3000";
 
-// Enhanced styling components
 const BorderBox = ({
 	children,
 	title,
@@ -62,7 +61,6 @@ const StatusBadge = ({ status, value }) => {
 
 // Helper function to get champion color
 const getChampionColor = (champion) => {
-	// Simple color assignment based on win rate or default
 	if (champion.winrate) {
 		const winrateNum = parseFloat(champion.winrate.replace("%", ""));
 		if (winrateNum >= 52) return "green";
@@ -125,12 +123,12 @@ const App = () => {
 			<BorderBox color="magenta" marginBottom={1} minWidth={86}>
 				<Box justifyContent="center" alignItems="center">
 					<GradientText colors={["magenta", "cyan"]}>
-						🏆 LEAGUE OF LEGENDS CHAMPION ANALYZER 🏆
+						🏆 LEAGUE OF LEGENDS STATS 🏆
 					</GradientText>
 				</Box>
 				<Box justifyContent="center">
 					<Text color="gray" italic>
-						Your ultimate champion statistics companion
+						A minimalist way to check matchups/counters
 					</Text>
 				</Box>
 			</BorderBox>
@@ -190,7 +188,6 @@ const App = () => {
 	);
 };
 
-// Enhanced Loading Component
 const LoadingView = () => (
 	<BorderBox color="yellow" title="⚡ Loading Status">
 		<Box justifyContent="center" alignItems="center" paddingY={2}>
@@ -204,7 +201,6 @@ const LoadingView = () => (
 	</BorderBox>
 );
 
-// Enhanced Error Component
 const ErrorView = ({ error, onRetry, isRawModeSupported }) => {
 	if (isRawModeSupported) {
 		useInput((input, key) => {
@@ -232,7 +228,6 @@ const ErrorView = ({ error, onRetry, isRawModeSupported }) => {
 	);
 };
 
-// Enhanced Main Menu Component
 const MainMenu = ({
 	onSelectBestChampions,
 	onSelectCounters,
@@ -333,7 +328,6 @@ const MainMenu = ({
 	);
 };
 
-// Enhanced Role Selection Component
 const RoleSelection = ({ roles, onSelectRole, onBack, isRawModeSupported }) => {
 	const [selectedRole, setSelectedRole] = useState(0);
 
@@ -402,7 +396,6 @@ const RoleSelection = ({ roles, onSelectRole, onBack, isRawModeSupported }) => {
 	);
 };
 
-// Enhanced Champion List Component
 const ChampionList = ({ champions, role, onBack, isRawModeSupported }) => {
 	const [currentPage, setCurrentPage] = useState(0);
 	const championsPerPage = 8;
@@ -502,7 +495,6 @@ const ChampionList = ({ champions, role, onBack, isRawModeSupported }) => {
 	);
 };
 
-// Enhanced Champion Search Component
 const ChampionSearch = ({ championData, onBack, isRawModeSupported }) => {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
@@ -714,7 +706,6 @@ const ChampionSearch = ({ championData, onBack, isRawModeSupported }) => {
 	);
 };
 
-// Render the app
 render(<App />);
 
 export default App;
